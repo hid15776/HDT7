@@ -81,12 +81,20 @@ public class BinaryTree<E> {
 	
 	public boolean isLeftChild() {
 		// post: returns true if this is a left child of parent
-		
+		if(this == parent.left()){
+			return true;
+		}else{
+			return false;
+		}
 	}
 	
 	public boolean isRightChild() {
 		// post: returns true if this is a left child of parent
-		
+		if(this == parent.right()){
+			return true;
+		}else{
+			return false;
+		}
 	}
 	
 	public E value(){

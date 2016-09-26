@@ -7,19 +7,22 @@
 
 public class Association<K, V> {
     K key;
-    V valor;
+    V value;
     
-    //Agrega ambas palabras y crea asociacion
-    public void addAsociation(K key, V valor){
+	// Se asocian las palabras
+    public void addAsociation(K key, V value){
         this.key = key;
-        this.valor = valor;
+        this.value = value;
     }
-    //Returna palabra en ingles
+	
+	//Returna la palabra en espanol
+    public V getValor(){
+        return this.value;
+    }
+	
+	//Returna la palabra en ingles
     public K getKey(){
         return this.key;
     }
-    //Returna palabra en espanol
-    public V getValor(){
-        return this.valor;
-    }
+	
 }

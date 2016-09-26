@@ -106,4 +106,10 @@ public class BinaryTree<E> {
 	// post: sets the value associated with this node
 		val = value;
 	}
+	
+	
+	//PUSE ESTO AQUI
+	public String toString() {
+		return name + " has the key " + key;
+	}
 }

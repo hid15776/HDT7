@@ -12,19 +12,23 @@ public class ReadFile {
 	private static Scanner input;
 	private static BufferedReader buffer;
 	int i = 0;
+	String read;
+	String[] readArray = null; 
 
-	public void ReadFile() throws IOException {
+	public String[] ReadFile() throws IOException {
 
 		input = new Scanner(System.in);
-    FileReader diccionario = new FileReader("diccionario.txt");
+        FileReader diccionario = new FileReader("diccionario.txt");
 		buffer = new BufferedReader(diccionario);
-		String read;
-		String[] readArray = null; 
-
+		
         List<String> list = new ArrayList<String>();
 
         while( (read=buffer.readLine()) != null){
            readArray = read.split("\\)\\ \\(");
+           
         }
+
+        return readArray;
 	}
+
 }

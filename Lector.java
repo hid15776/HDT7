@@ -48,7 +48,7 @@ public class Lector {
 	    BinaryTree diccionario = new BinaryTree();
 	    //Crea el arbol con las asociaciones 
 	    for (int x = 0; x < comp.size(); x++){
-	        diccionario.addNode(comp.get(x).getKey().toString(), comp.get(x).getValor().toString());
+	        diccionario.addNode((int)comp.get(x).getKey(), comp.get(x).getValor().toString());
 	    }
 	    
 	    //Recorre el arbol en in-order y imprime nos nodos en el oden con su asociacion

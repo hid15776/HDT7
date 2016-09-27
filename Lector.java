@@ -72,7 +72,7 @@ public class Lector {
 	        for (int x =0; x < palabras.length; x++){
 	        	//Para traduccion toma la palabra en espanol de la asociacion
 	            String traducir = diccionario.findName(palabras[x].toString());
-	            if(palabras[x].equals("house")|| palabras[x].equals("dog")|| palabras[x].equals("homework") || palabras[x].equals("women") || palabras[x].equals("town")
+	            if(palabras[x].equals("house")|| palabras[x].equals("dog")|| palabras[x].equals("homework") || palabras[x].equals("woman") || palabras[x].equals("town")
 	                    || palabras[x].equals("yes")){
 	                cadena += traducir + " ";
 	                //Si no existe la palabra la imprimira entre asteriscos

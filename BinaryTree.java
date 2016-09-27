@@ -2,7 +2,7 @@ public class BinaryTree {
 
 	Node root;
 
-	public void addNode(int key, String name) {
+	public void addNode(E key, E name) {
 
 		// Create a new Node and initialize it
 
@@ -35,7 +35,7 @@ public class BinaryTree {
 				// Check if the new node should go on
 				// the left side of the parent node
 
-				if (key < focusNode.key) {
+				if (key.toString().compareTo(focusNode.key.toString())< 0) {
 
 					// Switch focus to the left child
 

@@ -1,4 +1,13 @@
-public class BinaryTree {
+/**
+ * @author Marlon Hernandez, Jackeline Hidalgo, Steven Rubio
+ * Clase BinaryTree
+ * Implementa BinaryTree
+ * @version 26/09/2016
+ */
+
+import java.util.*;
+
+public class BinaryTree<E> {
 
 	Node root;
 
@@ -35,7 +44,7 @@ public class BinaryTree {
 				// Check if the new node should go on
 				// the left side of the parent node
 
-				if (key.toString().compareTo(focusNode.key.toString())< 0) {
+				if (key.toString().compareTo(focusNode.key.toString()) < 0) {
 
 					// Switch focus to the left child
 
@@ -74,7 +83,6 @@ public class BinaryTree {
 
 	}
 
-	
 	// All nodes are visited in ascending order
 	// Recursion is used to go to one node and
 	// then go to its child nodes and so forth
@@ -99,50 +107,7 @@ public class BinaryTree {
 
 	}
 
-	public String findName(String key) {
-		Node focusNode = root;
-		while (!Integer.toString(focusNode.key).equalsIgnoreCase(key)) {
-			if (key.compareTo(Integer.toString(focusNode.key)) < 0) {
-				focusNode = focusNode.leftChild;
-			} else {
-				focusNode = focusNode.rightChild;
-			}
-			if (focusNode == null)
-				return null;
-		}
-		return focusNode.name.toString();
-
-	}
-
-
-	
-	public void preorderTraverseTree(Node focusNode) {
-
-		if (focusNode != null) {
-
-			System.out.println(focusNode);
-
-			preorderTraverseTree(focusNode.leftChild);
-			preorderTraverseTree(focusNode.rightChild);
-
-		}
-
-	}
-
-	public void postOrderTraverseTree(Node focusNode) {
-
-		if (focusNode != null) {
-
-			postOrderTraverseTree(focusNode.leftChild);
-			postOrderTraverseTree(focusNode.rightChild);
-
-			System.out.println(focusNode);
-
-		}
-
-	}
-
-	public Node findNode(int key) {
+	public Node findNode(E key) {
 
 		// Start at the top of the tree
 
@@ -151,11 +116,11 @@ public class BinaryTree {
 		// While we haven't found the Node
 		// keep looking
 
-		while (focusNode.key != key) {
+		while (!focusNode.key.toString().equalsIgnoreCase(key.toString())) {
 
 			// If we should search to the left
 
-			if (key < focusNode.key) {
+			if (key.toString().compareTo(focusNode.key.toString()) < 0) {
 
 				// Shift the focus Node to the left child
 
@@ -179,7 +144,45 @@ public class BinaryTree {
 		return focusNode;
 
 	}
+        
+        public String findName(String key) {
+		Node focusNode = root;
+		while (!focusNode.key.toString().equalsIgnoreCase(key)) {
+			if (key.compareTo(focusNode.key.toString()) < 0) {
+				focusNode = focusNode.leftChild;
+			} else {
+				focusNode = focusNode.rightChild;
+			}
+			if (focusNode == null)
+				return null;
+		}
+		return focusNode.name.toString();
 
+	}
 
 }
 
+class Node<G> {
+
+	G key;
+	G name;
+
+	Node leftChild;
+	Node rightChild;
+
+	Node(G key, G name) {
+            
+		this.key = key;
+		this.name = name;
+                
+	}
+
+	public String toString() {
+
+		return name + ", traduccion de " + key;
+
+		
+
+	}
+
+}
